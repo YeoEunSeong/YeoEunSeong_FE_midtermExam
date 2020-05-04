@@ -6,33 +6,30 @@
     div#app { padding: 50px; margin: 30px auto; max-width: 600px; 
       border: 1px solid #ccc; box-shadow: 3px 3px 3px #aaa; font-size: 11pt; }
     button { padding: 0.5em 2em; }
-    span { display: inline-block; margin: 20px; padding: 20px 40px; 
-      border: 1px solid black; }
+    span { display: inline-block; margin: 30px; padding: 40px 40px; 
+      border: 1px solid black;  background-color: yellow; }
 
   </style>
 </head>
 <body>
   <div id="app">
-    <button type="button" v-on:click="show">보이기</button>
-    <button type="button" v-on:click="hide">감추기</button>
+    <button type="button" v-on:click="show" :disabled="visible">보이기</button>
+    <button type="button" v-on:click="hide" :disabled="!visible">감추기</button>
   </br>
-    <span>  </span>
+    <span v-show="visible">  </span>
 </div>
   <script type="text/javascript">
     var app = new Vue({
       el: '#app',
       data: {
-        value: 0
+        visible: true
       },
       methods: {
-        increaseValue: function() {
-            if(!this.value) this.value=0;
-            this.value++;
+        show: function() {
+            this.visible=true;
         },
-        decreaseValue: function() {
-            if(!this.value) this.value=0;
-            this.value--;
-          
+        hide: function() {
+            this.visible=false;
         }
       }
     })    

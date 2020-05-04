@@ -17,7 +17,7 @@ function sum(a) {
 }
 
 function test_sum(f) {
-    let result = 
+    let result = f();
     
 }
 

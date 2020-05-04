@@ -30,9 +30,7 @@
       },
       methods: {
         makediv: function() {
-            this.matrix.size=this.size;
-            console.log(this.size);
-            
+            this.matrix=[];
             for(let i=0; i<this.size; ++i){
                 let j= Math.floor(Math.random()*this.matrix.length);
                 Vue.set(this.matrix, i, j);
