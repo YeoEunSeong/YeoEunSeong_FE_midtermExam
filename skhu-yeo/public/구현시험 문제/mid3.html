@@ -6,32 +6,34 @@
     div#app { padding: 50px; margin: 30px auto; max-width: 600px; 
       border: 1px solid #ccc; box-shadow: 3px 3px 3px #aaa; font-size: 11pt; }
     button { padding: 0.5em 2em; }
+    span { display: inline-block; margin: 5px; padding: 8px 15px; 
+            border: 1px solid black; }
   </style>
 </head>
 <body>
   <div id="app">
-    <input type="text" v-model="value"></input>
-    <button type="button" v-on:click="increaseValue">++</button>
-    <button type="button" v-on:click="decreaseValue">--</button>
+    <input type="text" v-model="size"></input>
+    <button type="button" v-on:click="makediv">생성</button>
+    <span v-for="s in matrix">
+        {{ s }}
+    </span>
+  
+  
   </div>
   <script type="text/javascript">
     var app = new Vue({
       el: '#app',
       data: {
-        value: 0
+        matrix:[1,2,3,4,5],
+        size: 0
       },
       methods: {
-        increaseValue: function() {
-            if(!this.value) this.value=0;
-            this.value++;
-        },
-        decreaseValue: function() {
-            if(!this.value) this.value=0;
-            this.value--;
-          
-        }
-      }
-    })    
+        makediv: function() {
+            console.log(this.size);
+                        
+        }          
+    }
+})    
    </script>
 </body>    
 </html>
