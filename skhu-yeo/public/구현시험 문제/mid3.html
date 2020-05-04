@@ -14,6 +14,7 @@
   <div id="app">
     <input type="text" v-model="size"></input>
     <button type="button" v-on:click="makediv">생성</button>
+  </br>
     <span v-for="s in matrix">
         {{ s }}
     </span>
@@ -24,13 +25,19 @@
     var app = new Vue({
       el: '#app',
       data: {
-        matrix:[1,2,3,4,5],
+        matrix:[],
         size: 0
       },
       methods: {
         makediv: function() {
+            this.matrix.size=this.size;
             console.log(this.size);
-                        
+            
+            for(let i=0; i<this.size; ++i){
+                let j= Math.floor(Math.random()*this.matrix.length);
+                Vue.set(this.matrix, i, j);
+            }
+                
         }          
     }
 })    
