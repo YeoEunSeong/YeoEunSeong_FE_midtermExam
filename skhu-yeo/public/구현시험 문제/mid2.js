@@ -6,17 +6,14 @@ let a = [];
 
 
 for (let i = 0; i < 100 ; i++) {
-    a[i] = Math.floor(Math.random() * (100) + 1);
-    
-    
+    a[i] = Math.floor(Math.random() * (100) + 1); 
 }
+
 function compareNumber(i,j){
     return j-i;
 }
-console.log(a);
 
 a.sort(compareNumber);
-console.log("from here");
-
 console.log(a);
+
 
