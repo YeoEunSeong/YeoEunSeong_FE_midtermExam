@@ -12,8 +12,5 @@ for (let i = 0; i < 100 ; i++) {
 function compareNumber(i,j){
     return j-i;
 }
-
 a.sort(compareNumber);
 console.log(a);
-
-
