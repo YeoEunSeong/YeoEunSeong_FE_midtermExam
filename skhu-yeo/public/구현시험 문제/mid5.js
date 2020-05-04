@@ -14,4 +14,3 @@ let even_filter = a.filter((e) => e % 2 === 0);
 let result = even_filter.reduce((a, b) => a + b);
 
 console.log(result);
-

@@ -17,12 +17,14 @@ function sum(a) {
 }
 
 function test_sum(f) {
-    let result = f();
-    
+    let a = []; 
+    for (let i = 0; i < 10 ; i++) {
+        a[i] = Math.floor(Math.random() * (10) + 1);
+    }
+    console.log(a);
+    console.log(f(a));
 }
 
-a=[0,1,2,3,4,5];
-
-console.log(sum(a))
-
-//미완성
+for (let i = 0; i < 5 ; i++) {
+    test_sum(sum);
+}

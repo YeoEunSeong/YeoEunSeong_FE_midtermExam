@@ -32,7 +32,7 @@
         makediv: function() {
             this.matrix=[];
             for(let i=0; i<this.size; ++i){
-                let j= Math.floor(Math.random()*this.matrix.length);
+                let j= Math.floor(Math.random()*10);
                 Vue.set(this.matrix, i, j);
             }
                 
